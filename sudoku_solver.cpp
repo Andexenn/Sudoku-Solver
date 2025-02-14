@@ -51,7 +51,7 @@ void getInput(vector<vector<int>>&grid){
     }
 
     cout<<"\nPLEASE ENTER YOUR SUDOKU PROBLEM, BETWEEN EVERY NUMBER MUST HAS A SPACE\n";
-    cout<<"NOTE: THE MISSING PLACE MUST BE EQUAL TO ZERO\n\n";
+    cout<<"\nNOTE: THE MISSING PLACE MUST BE EQUAL TO ZERO\n\n";
 
     for( int row = 0; row < 9; row++){
         cout << "LINE " << row + 1 << " :";
@@ -92,7 +92,7 @@ void getInput(vector<vector<int>>&grid){
         cout<<"YOUR SUDOKU PROBLEM VIOLATE THE RULES! PLEASE ENTER AGAIN\n";
         getInput(grid);
     }
-    cout << "DO YOU WANT TO CHANGE ANY CELL? y/n ";
+    cout << "DO YOU WANT TO CHANGE ANY CELLS? y/n ";
     char c;cin >> c;
     if(c == 'y')
         checkInput(grid);
@@ -135,10 +135,10 @@ bool checkValidSudoku(vector<vector<int>>&grid){
 }
 
 bool checkValidCell(vector<vector<int>>&grid, int column, int row, int num){
-    for(int i=0;i<9;i++){
-        if(grid[row][i]==num)
+    for(int i = 0;i < 9; i++){
+        if(grid[row][i] == num)
             return false;
-        if(grid[i][column]==num)
+        if(grid[i][column] == num)
             return false;
         if(grid[row - row%3 + i/3][column - column%3 + i%3] == num)
             return false;
@@ -178,7 +178,7 @@ bool solveSudoku(vector<vector<int>>&grid){
 
 int main(){
     vector<vector<int>>grid(9,vector<int>(9,0));
-    cout<<"SUDOKU SOLVER!\n";
+    cout<<"SUDOKU SOLVER!\n\n";
     getInput(grid);
     if(solveSudoku(grid)){
         cout<<"SUDOKU PROBLEM AFTER SOLVED:\n";
