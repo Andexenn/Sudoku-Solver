@@ -8,7 +8,7 @@ using namespace std;
 void getInput(vector<vector<int>>&grid);
 void checkInput(vector<vector<int>>&grid);
 void printOutput(vector<vector<int>>&grid);
-bool solveSudoku(vector<vector<int>>&grid); //giai bang backtracking + heuristic || bitmask || Dancing links
+bool solveSudoku(vector<vector<int>>&grid); 
 bool checkValidCell(vector<vector<int>>&grid, int row,int column,int num);
 bool checkValidSudoku(vector<vector<int>>&grid);
 
@@ -189,16 +189,3 @@ int main(){
     }
     return 0;
 }
-
-/*
-5 3 0 0 7 0 0 0 0
-6 0 0 1 9 5 0 0 0
-0 9 8 0 0 0 0 6 0
-8 0 0 0 6 0 0 0 3
-4 0 0 8 0 3 0 0 1
-7 0 0 0 2 0 0 0 6
-0 6 0 0 0 0 2 8 0
-0 0 0 4 1 9 0 0 5
-0 0 0 0 8 0 0 7 9
-1 2 3 4 5 6 7 8 10
-*/
